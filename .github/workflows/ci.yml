@@ -12,6 +12,7 @@ jobs:
         ruby-version:
           - 2.5
           - 2.6
+          - 2.7
         appraisal:
           - activemodel-3
           - activemodel-4

@@ -25,6 +25,7 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    bigdecimal (1.4.4)
     builder (3.2.3)
     coderay (1.1.0)
     coercible (1.0.0)
@@ -71,6 +72,7 @@ PLATFORMS
 DEPENDENCIES
   activemodel (>= 3.0)
   appraisal
+  bigdecimal (< 2.0)
   bundler (>= 1.5)
   pry
   rake
