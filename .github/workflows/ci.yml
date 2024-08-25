@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  - pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version:
+          - 2.5
+          - 2.6
+        appraisal:
+          - activemodel-3
+          - activemodel-4
+          - activemodel-5
+          - activemodel-5_1
+          - activemodel-5_2
+          - activemodel-6_0
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          bundle exec appraisal install
+
+      - name: Run tests
+        env:
+          TZ: America/New_York
+        run: bundle exec appraisal ${{ matrix.appraisal }} rspec
