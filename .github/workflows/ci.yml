@@ -10,9 +10,9 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - 2.5
-          - 2.6
-          - 2.7
+          - "2.6"
+          - "2.7"
+          - "3.0"
         appraisal:
           - activemodel-5
           - activemodel-5_1
