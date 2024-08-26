@@ -68,7 +68,7 @@ describe SimpleParams::Attribute do
 
       it "coerces values into BigDecimal" do
         model.value = "1"
-        model.value.should eq(BigDecimal.new("1.0"))
+        model.value.should eq(BigDecimal("1.0"))
       end
     end
 

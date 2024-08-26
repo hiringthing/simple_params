@@ -12,6 +12,7 @@ jobs:
         ruby-version:
           - 2.5
           - 2.6
+          - 2.7
         appraisal:
           - activemodel-3
           - activemodel-4
@@ -26,10 +27,10 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-          bundler-cache: true
 
       - name: Install dependencies
         run: |
+          bundle install
           bundle exec appraisal install
 
       - name: Run tests
