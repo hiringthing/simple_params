@@ -14,8 +14,6 @@ jobs:
           - 2.6
           - 2.7
         appraisal:
-          - activemodel-3
-          - activemodel-4
           - activemodel-5
           - activemodel-5_1
           - activemodel-5_2
